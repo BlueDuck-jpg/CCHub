@@ -30,7 +30,7 @@ local check_name = game.HttpService:JSONEncode(check_key.Body):split('"')[13]:sp
 
 createNotification("Welcome!", "We're happy to see you, " .. check_name .. "!", 5)
 
-local window = library.CreateLib("CCHub v1 - Tower Of Hell", GrapeTheme)
+local window = library.CreateLib("CCHub v1 - Tower Of Hell, Welcome " .. check_name, GrapeTheme)
 local tab = window:NewTab("Main")
 local Cheats = tab:NewSection("Main")
 local tab1 = window:NewTab("Local Player")
