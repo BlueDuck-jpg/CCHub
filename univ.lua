@@ -18,6 +18,7 @@ function createNotification(Title, Text, Duration)
     }) 
 end
 
+local checkname;
 function greetUser()
     local key;
     key = game.HttpService:JSONDecode(readfile("cchub.json"))
@@ -27,14 +28,14 @@ function greetUser()
         Method="GET",
         Headers=headers
     })
-    local check_name = game.HttpService:JSONEncode(check_key.Body):split('"')[13]:split("\\")[1]
+    check_name = game.HttpService:JSONEncode(check_key.Body):split('"')[13]:split("\\")[1]
     
     createNotification("Welcome!", "We're happy to see you, " .. check_name .. "!", 5)
 end
 
 greetUser()
 
-local window = library.CreateLib("CCHub v1 - Universal", GrapeTheme)
+local window = library.CreateLib("CCHub v1 - Universal, Welcome " .. check_name, GrapeTheme)
 local tab1 = window:NewTab("Local Player")
 local LocalPlayer = tab1:NewSection("Local Player")
 local tab2 = window:NewTab("Aimbot & ESP")
