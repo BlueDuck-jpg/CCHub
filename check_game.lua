@@ -13,6 +13,8 @@ if check_blacklist ~= "true" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/CCHub/main/toh.lua"))()
     elseif game.PlaceId == 6067050638 then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/CCHub/main/tyt.lua"))()
+    elseif game.PlaceId == 286090429 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/CCHub/main/ars.lua"))()
     else
         loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/CCHub/main/univ.lua"))()
     end
