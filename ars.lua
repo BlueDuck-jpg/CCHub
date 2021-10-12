@@ -210,7 +210,7 @@ local function player()
                         target = v
                         dist = magnitude
                     end
-                elseif getgenv().teamcheck and getgenv().aimoption == "Closest To Player" then
+                elseif getgenv().teamcheck then
                     if v.TeamColor ~= game.Players.LocalPlayer.TeamColor then
                         local magnitude = (v.Character.HumanoidRootPart.Position - localPlayer.Character.HumanoidRootPart.Position).magnitude
     
