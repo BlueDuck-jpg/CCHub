@@ -405,7 +405,7 @@ local OldIndex = MT.__index
 setreadonly(MT, false)
 MT.__index = newcclosure(function(A, B)
     if B == "Clips" then
-        if _G.Enable then
+        if getgenv().wallbang then
             return workspace.Map
         end
     end
