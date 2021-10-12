@@ -416,7 +416,7 @@ Main3:NewToggle("Wallbang", "Wallbang", function(t)
     getgenv().wallbang = t
 end)
 
-Credits:AddDropdown("Scripters", "List of scripters", {"Blue Duck#8344", "Feliposo21#3197"}, function(t)
+Credits:NewDropdown("Scripters", "List of scripters", {"Blue Duck#8344", "Feliposo21#3197"}, function(t)
     setclipboard(t) 
 end)
 
