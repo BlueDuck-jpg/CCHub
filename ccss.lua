@@ -626,3 +626,5 @@ end)
 R6.MouseButton1Click:Connect(function()
     executeScript("require(3041175937):r6('"..localPlayer.Name.."')") 
 end)
+
+return ScreenGui
