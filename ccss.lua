@@ -566,6 +566,7 @@ local function remoteCheck(rm)
 end
 
 local function scan()
+    createNotification("Backdoor Notification", "Checking for backdoor!", 5)
 	if BackdoorUI.scanning then return end
 	if BackdoorUI.attached then changeUiState() end
 
@@ -593,6 +594,8 @@ local function scan()
 	if check() then
 		changeUiState()
 		return
+	else
+	    createNotification("Backdoor Notification!", "Sadly there was no backdoor found!", 5)
 	end
 	
 	BackdoorUI.scanning = false
