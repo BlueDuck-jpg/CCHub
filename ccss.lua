@@ -630,7 +630,7 @@ end)
 local uis = game:GetService("UserInputService")
 
 uis.InputBegan:Connect(function(key, gameProcessed))
-    if key == Enum.KeyCode.RightAlt then
+    if key.KeyCode == Enum.KeyCode.RightAlt then
 	Frame.Visible = not Frame.Visible
     end
 end)
