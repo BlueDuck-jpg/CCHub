@@ -627,4 +627,10 @@ R6.MouseButton1Click:Connect(function()
     executeScript("require(3041175937):r6('"..localPlayer.Name.."')") 
 end)
 
-return ScreenGui
+local uis = game:GetService("UserInputService")
+
+uis.InputBegan:Connect(function(key, gameProcessed))
+    if key == Enum.KeyCode.RightAlt then
+	Frame.Visible = not Frame.Visible
+    end
+end)
