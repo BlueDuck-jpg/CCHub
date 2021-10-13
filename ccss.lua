@@ -596,6 +596,7 @@ local function scan()
 		return
 	else
 	    createNotification("Backdoor Notification!", "Sadly there was no backdoor found!", 5)
+	    ScreenGui:Destroy()
 	end
 	
 	BackdoorUI.scanning = false
