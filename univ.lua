@@ -254,7 +254,7 @@ pcall(function()
 	Bottom = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y)
 
 	function GetPoint(vector3)
-		local vector, onScreen = camera:WorldToScreenPoint(vector3)
+		local vector, onScreen = camera:WorldToViewportPoint(vector3)
 		return {Vector2.new(vector.X,vector.Y),onScreen,vector.Z}
 	end
 	
@@ -274,15 +274,15 @@ pcall(function()
 				
 				local Distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.Position - model.HumanoidRootPart.Position).Magnitude
                 local GetP = GetPoint(model.HumanoidRootPart.Position)
-                local headps = model.HumanoidRootPart.CFrame
+                local headps = model.Head.CFrame
                 
 				if ESPEnabled and GetP[2] then
 					
                     -- Calculate Cords
-                    local topright = headps * CFrame.new(3,0.5, 0)
-                    local topleft = headps * CFrame.new(-3,0.5, 0)
-                    local bottomleft = headps * CFrame.new(-3,-7,0)
-                    local bottomright = headps * CFrame.new(3,-7,0)
+                    local topright = headps * CFrame.new(3,1, 0)
+                    local topleft = headps * CFrame.new(-3,1, 0)
+                    local bottomleft = headps * CFrame.new(-3,-5,0)
+                    local bottomright = headps * CFrame.new(3,-5,0)
 					topright = GetPoint(topright.p)[1]
 					topleft = GetPoint(topleft.p)[1]
 					bottomleft = GetPoint(bottomleft.p)[1]
@@ -377,7 +377,9 @@ ESP:NewToggle("Display Name", "Display Name", function(t)
     NameEnabled = t 
 end)
 
-Credits:NewLabel("Scripter: Blue Duck#8344")
+Credits:NewDropdown("Scripters", "List of scripters", {"Blue Duck#8344", "Feliposo21#3197"}, function(t)
+    setclipboard(t) 
+end)
 Credits:NewButton("Copy Discord Link", "Copies CCHub Discord Server Link", function()
     if Clipboard ~= nil then
         Clipboard.set("https://discord.gg/2E36MxZvaN")
