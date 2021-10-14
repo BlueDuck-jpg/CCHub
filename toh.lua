@@ -448,7 +448,9 @@ ESP:NewToggle("Display Name", "Display Name", function(t)
     NameEnabled = t 
 end)
 
-Credits:NewLabel("Scripter: Blue Duck#8344")
+Credits:NewDropdown("Scripters", "List of scripters", {"Blue Duck#8344", "Feliposo21#3197"}, function(t)
+    setclipboard(t) 
+end)
 Credits:NewButton("Copy Discord Link", "Copies CCHub Discord Server Link", function()
     if Clipboard ~= nil then
         Clipboard.set("https://discord.gg/2E36MxZvaN")
