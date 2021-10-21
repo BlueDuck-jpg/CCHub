@@ -107,9 +107,7 @@ Cheats:NewToggle("God Mode", "Enables god mode", function(t)
 end)
 
 Cheats:NewButton("Win", "Win (might bugs)", function()
-    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").tower.finishes, 0)
-    wait(.1)
-    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").tower.finishes, 1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").tower.finishes.Finish.CFrame
 end)
 
 Cheats:NewSlider("Walk Speed", "WalkSpeed", 100, 0, function(t)
@@ -494,4 +492,8 @@ end)
 
 Settings:NewKeybind("Change Toggle Ui Keybind", "Change Toggle Ui Keybind", Enum.KeyCode.RightControl, function()
     library:ToggleUI()
+end)
+
+Settings:NewButton("Log out form CCHub", "Log out from CCHub", function()
+    delfile("cchub.json") 
 end)
