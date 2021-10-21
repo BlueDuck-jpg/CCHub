@@ -495,5 +495,8 @@ Settings:NewKeybind("Change Toggle Ui Keybind", "Change Toggle Ui Keybind", Enum
 end)
 
 Settings:NewButton("Log out form CCHub", "Log out from CCHub", function()
-    delfile("cchub.json") 
+    delfile("cchub.json")
+    createNotification("You have successfully logged out. You will automatically rejoin the game. After you've rejoined the game, please re-run CCHub.", 5)
+    wait(5)
+    game.TeleportService:TeleportToPlaceAsync(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 end)
