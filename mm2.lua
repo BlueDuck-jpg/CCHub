@@ -41,7 +41,6 @@ local Eh1 = tab:NewSection("Main")
 local Eh2 = tab:NewSection("Emotes")
 local Main1 = tab:NewSection("Aimbot")
 local Main2 = tab:NewSection("ESP")
-local Main3 = tab:NewSection("Others")
 local tab1 = window:NewTab("Local Player")
 local LocalPlayer = tab1:NewSection("Local Player")
 local tab3 = window:NewTab("Credits & Settings")
@@ -485,24 +484,6 @@ end)
 
 Main2:NewToggle("Display Name", "Display Name", function(t)
     NameEnabled = t 
-end)
-
-getgenv().wallbang = false
-
-local MT = getrawmetatable(game)
-local OldIndex = MT.__index
-setreadonly(MT, false)
-MT.__index = newcclosure(function(A, B)
-    if B == "Clips" then
-        if getgenv().wallbang then
-            return workspace.Map
-        end
-    end
-    return OldIndex(A, B)
-end)
-
-Main3:NewToggle("Wallbang", "Wallbang", function(t)
-    getgenv().wallbang = t
 end)
 
 Credits:NewDropdown("Scripters", "List of scripters", {"Blue Duck#8344", "Feliposo21#3197"}, function(t)
