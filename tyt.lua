@@ -1,5 +1,5 @@
 -- Kavo-UI-Library Module
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/BlueDuck-jpg/UiLibrary/main/KavoUiLibrary.lua"))()
 
 -- https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua for themes
 local GrapeTheme = {
@@ -437,10 +437,9 @@ end)
 Settings:NewKeybind("Change Toggle Ui Keybind", "Change Toggle Ui Keybind", Enum.KeyCode.RightControl, function()
     library:ToggleUI()
 end)
-
 Settings:NewButton("Log out form CCHub", "Log out from CCHub", function()
     delfile("cchub.json")
-    createNotification("You have successfully logged out. You will automatically rejoin the game. After you've rejoined the game, please re-run CCHub.", 5)
-    wait(5)
-    game.TeleportService:TeleportToPlaceAsync(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+    createNotification("LOGGED OUT", "You have successfully logged out.", 5)
+    library:Destroy()
+    loadstring(game:HttpGet("https://ghostbin.com/CMKFU/raw"))()
 end)
